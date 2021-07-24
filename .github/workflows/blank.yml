@@ -18,34 +18,28 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-        aws-access-key-id: ${{ secrets.AKIA6KN4QAMUHTUDDIAG }}
-        aws-secret-access-key: ${{ secrets.5MGCk+t3bbyDk4pAHQFuV5gGN/xHtGcw2/yn3qYq }}
-        aws-region: us-east-1
-        profile_name: default
-        project_name: lamdapython
-        runtime: python3.7
+          - name: Configure AWS credentials from Production account
+            uses: aws-actions/configure-aws-credentials@v1
+            with: 
+                aws-access-key-id: ${{ secrets.AKIA6KN4QAMUHTUDDIAG }}
+                aws-secret-access-key: ${{ secrets.5MGCk+t3bbyDk4pAHQFuV5gGN/xHtGcw2/yn3qYq }}
+                aws-region: us-east-1
+                profile_name: default
+                project_name: lamdapython
+                runtime: python3.7
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-           python -m pip install --upgrade piP
-           pip3 install -r requirements.txt -t .
-           zip -r test-dep-dev.zip .
-           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-         sudo dpkg -i google-chrome-stable_current_amd64.deb
-         export PATH=$PATH:$(pwd)
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: TESRT    
-        uses: appleboy/lambda-action@v0.0.4
-        with:
-            #name of my AWS Lambda Function
-            function_name: lamdapython
-            #contains all the files in my github repository
-            zip_file: lamdapython.zip
+      
+          - name: Run a multi-line script
+            run: |
+              python -m pip install --upgrade pip
+              pip3 install -r requirements.txt -t .
+              wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+              sudo dpkg -i google-chrome-stable_current_amd64.deb
+              export PATH=$PATH:$(pwd)
+              
+              
+          - name: TESRT    
+            uses: appleboy/lambda-action@v0.0.4
+            with:
+                 function_name: lamdapython
+                 zip_file: lamdapython.zip
