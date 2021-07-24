@@ -48,8 +48,8 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo dpkg -i google-chrome-stable_current_amd64.deb
           export PATH=$PATH:$(pwd)
-     - name: AWS Lambda Deploy
-      uses: leyon/lambda-action@v0.0.4
-      with:
-        function_name: lamdapython
-        zip_file: lambdapython.zip
+      - name: LABO
+        uses: leyon/lambda-action@v0.0.4
+        with:
+          function_name: lamdapython
+          zip_file: lambdapython.zip
