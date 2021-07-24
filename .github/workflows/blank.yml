@@ -20,7 +20,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     uses: aws-actions/configure-aws-credentials@v1
-      with:
+    with:
         aws-access-key-id: ${{ secrets.AKIA6KN4QAMUHTUDDIAG }}
         aws-secret-access-key: ${{ secrets.5MGCk+t3bbyDk4pAHQFuV5gGN/xHtGcw2/yn3qYq }}
         aws-region: us-east-1
