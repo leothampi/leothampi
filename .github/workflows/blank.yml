@@ -27,7 +27,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-          with:
+        with:
         aws-access-key-id: ${{ secrets.AKIA6KN4QAMUHTUDDIAG }}
         aws-secret-access-key: ${{ secrets.5MGCk+t3bbyDk4pAHQFuV5gGN/xHtGcw2/yn3qYq }}
         aws-region: us-east-1
@@ -37,18 +37,11 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-         #install PIP
-         python -m pip install --upgrade pip
-         #install all dependencies as defined by requirements.txt in the current directory
-         pip3 install -r requirements.txt -t .
-         #for installing invidividual modules
-         #pip3 install Flask -t .
-         #zip files into current directory
-         zip -r test-dep-dev.zip .
+           python -m pip install --upgrade piP
+           pip3 install -r requirements.txt -t .
+           zip -r test-dep-dev.zip .
            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
          sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-         #ensuring current working directory is accessible by the function--this might not be doing anything
          export PATH=$PATH:$(pwd)
 
       # Runs a set of commands using the runners shell
@@ -56,8 +49,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      uses: appleboy/lambda-action@v0.0.4
-      with:
+      - name: TESRT    
+        uses: appleboy/lambda-action@v0.0.4
+        with:
             #name of my AWS Lambda Function
             function_name: lamdapython
             #contains all the files in my github repository
