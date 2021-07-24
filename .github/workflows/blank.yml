@@ -40,5 +40,5 @@ jobs:
           - name: TESRT    
             uses: appleboy/lambda-action@v0.0.4
             with:
-                 function_name: lamdapython
+                 function_name: arn:aws:lambda:us-east-1:984479695656:function:lamdapython
                  zip_file: lamdapython.zip
