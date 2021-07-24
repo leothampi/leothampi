@@ -42,7 +42,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          un: |
          #install PIP
          python -m pip install --upgrade pip
          #install all dependencies as defined by requirements.txt in the current directory
