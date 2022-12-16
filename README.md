@@ -13,5 +13,5 @@
    
    <a href="https://www.leyonthampi.com" target="">Leyon Thampi</a>
       
-   <a href="https://www.linkedin.com/in/leyonthampi" target="">linkedIn</a>
+   <a href="https://www.linkedin.com/in/leyonthampi" target="">LinkedIn</a>
       
