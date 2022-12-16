@@ -11,7 +11,7 @@
    
    Connect me on :
    
-    www.leyonthampi.com
+   <a href="https://www.leyonthampi.com" target="">Leyon Thampi</a>
       
-    www.linkedin/in/leyonthampi
+   <a href="https://www.linkedin.com/in/leyonthampi" target="">linkedIn</a>
       
